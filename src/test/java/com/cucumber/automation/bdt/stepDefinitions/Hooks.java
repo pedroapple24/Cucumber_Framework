@@ -13,7 +13,6 @@ public class Hooks {
     @Before
     public void beforeScenario() throws
             MalformedURLException, InterruptedException{
-
         df.createDriver();
     }
 

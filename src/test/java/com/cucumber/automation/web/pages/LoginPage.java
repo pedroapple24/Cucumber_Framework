@@ -17,12 +17,10 @@ public class LoginPage extends DriverFactory {
      */
 
     By SigninLink = By.linkText("Sign in");
-    //By marketingSection = By.className("marketing-section-signup");
+    By searchField = By.name("q");
     By loginSection = By.className("auth-form-body");
     By SigninButton = By.name("commit");
     By errorMessage = By.xpath("//div[@id='js-flash-container']/div/div");
-    ////*[@id="js-flash-container"]
-    ///html/body/div[3]/main/div/form/div[2]/div/div
 
     /**
      * All functions related to behavior will follow now
@@ -30,7 +28,7 @@ public class LoginPage extends DriverFactory {
     public void ishomepageDisplayed() {
         waitVar.until(ExpectedConditions.presenceOfElementLocated(SigninLink));
         driver.findElement(SigninLink).isDisplayed();
-        //driver.findElement(marketingSection).isDisplayed();
+        driver.findElement(searchField).isDisplayed();
     }
 
     public void clickSigninLink() {
