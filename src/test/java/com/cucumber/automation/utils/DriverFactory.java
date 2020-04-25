@@ -27,20 +27,12 @@ public class DriverFactory {
         System.setProperty("webdriver.gecko.driver", driverPath);
 
         driver = new FirefoxDriver();
-
         driver.manage().window().maximize();
-
-        driver.manage().timeouts().implicitlyWait(15,
-                TimeUnit.SECONDS);
-
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         driver.get(baseURL);
-
         waitVar = new WebDriverWait(driver, 15);
     }
 
-    /**
-     * This function is to close driver instance
-     */
     public void teardown() {
         driver.quit();
     }
