@@ -14,7 +14,7 @@ public class LoginPage extends DriverFactory {
     By loginSection = By.className("auth-form-body");
     By SigninButton = By.name("commit");
     By errorMessage = By.xpath("//div[@id='js-flash-container']/div/div");
-    
+
     public void ishomepageDisplayed() {
         waitVar.until(ExpectedConditions.presenceOfElementLocated(SigninLink));
         driver.findElement(SigninLink).isDisplayed();
@@ -39,8 +39,6 @@ public class LoginPage extends DriverFactory {
     public void verifyErrorMessage(String msg) {
         waitVar.until(ExpectedConditions.presenceOfElementLocated
                 (errorMessage));
-
-        assertEquals(msg,
-                driver.findElement(errorMessage).getText());
+        assertEquals(msg,driver.findElement(errorMessage).getText());
     }
 }
